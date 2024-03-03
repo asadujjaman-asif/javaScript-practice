@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1012, initial-scale=1.0">
+	<title>Remove Item</title>
+</head>
+<body>
+	<h1>Remove Items</h1>
+	<ul class="item-parent">
+		<li class="item">Item Name 01</li>
+		<li class="item">Item Name 02</li>
+		<li class="item">Item Name 03</li>
+		<li class="item">Item Name 04</li>
+		<li class="item">Item Name 05</li>
+		<li class="item">Item Name 06</li>
+		<li class="item">Item Name 07</li>
+	</ul>
+</body>
+<script type="text/javascript">
+	var $itemNames=document.getElementsByClassName('item');
+	for(const $item of $itemNames){
+		$item.addEventListener('click',function(even){
+			//let $parentItem=document.getElementById('item-parent');
+			//$parentItem.removeChild($item);
+			even.target.parentNode.removeChild(even.target);
+		});
+	}
+</script>
+</html>
