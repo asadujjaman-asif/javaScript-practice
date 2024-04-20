@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DOM manupulation</title>
+	<style type = "text/css">
+	 p{
+			padding: 0;
+			max-width: 0;
+			margin-top:0px;
+		}
+	</style>
+</head>
+<body>
+	<div id="main-container">
+		<div class="students">
+			<h3>Name:Asad</h3>
+			<p>Age:30</p>
+			<p>Roll:52</p>
+		</div>
+		<div class="students">
+			<h3>Name:Khokon</h3>
+			<p>Age:30</p>
+			<p>Roll:55</p>
+		</div>
+		<div class="students">
+			<h3>Name:Faruk</h3>
+			<p>Age:35</p>
+			<p>Roll:2</p>
+		</div>
+		<div class="students">
+			<h3>Name:Sultan</h3>
+			<p>Age:33</p>
+			<p>Roll:20</p>
+		</div>
+		<div class="students">
+			<h3>Name:Siyam</h3>
+			<p>Age:30</p>
+			<p>Roll:11</p>
+		</div>
+	</div>
+	<footer>
+		<button id="add-student">Add new student</button>
+		<button id="add-color">Add background color</button>
+	</footer>
+	<script type="text/javascript">
+		let studentID= document.getElementById("add-student")
+		studentID.addEventListener('click',()=>{
+			
+			let parentNode=document.createElement('div')
+			parentNode.classList.add('students')
+			parentNode.innerHTML=`<h3>Name: Asif </h3><p>Age:30</p>
+			<p>Roll:12</p>`
+
+			let parentID=document.getElementById('main-container')
+			parentID.appendChild(parentNode)
+		})
+		//Background Color
+		let $bgColor= document.getElementById("add-color")
+		$bgColor.addEventListener('click',()=>{
+			let $stList=document.getElementsByClassName('students')
+			for(let $st of $stList){
+				$st.style.backgroundColor =`#${Math.floor(100000 + Math.random() * 900000)}`;
+				$st.style.color="#fff";
+				$st.style.padding="5px";
+			}
+		})
+		
+	</script>
+</body>
+</html>
